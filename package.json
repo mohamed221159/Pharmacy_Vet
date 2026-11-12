@@ -6,14 +6,31 @@
   "author": "Clinic",
   "scripts": {
     "start": "electron .",
+    "build": "electron-builder --win",
     "dist": "electron-builder --win nsis portable"
   },
-  "devDependencies": { "electron": "^33.0.0", "electron-builder": "^25.1.8" },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
   "build": {
     "appId": "com.vetpharmacy.ledger",
     "productName": "VetPharmacyLedger",
-    "files": ["index.html", "config.js", "main.js", "vendor/**"],
-    "win": { "target": ["nsis", "portable"] },
-    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true }
+    "files": [
+      "index.html",
+      "config.js",
+      "main.js",
+      "vendor/**"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
